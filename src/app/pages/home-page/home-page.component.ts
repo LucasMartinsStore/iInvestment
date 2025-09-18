@@ -4,19 +4,27 @@ import { Location } from '@angular/common';
 import { Router } from '@angular/router';
 import { InvestmentResponseService } from './service/investment-response/investment-response.service';
 import { InvestmentResponse } from './interface/investment-response';
-import { ListFilter, LucideAngularModule } from 'lucide-angular';
 import { CardInvestmentsComponent } from './components/card-investments/card-investments.component';
 import { take } from 'rxjs';
 import { takeUntilDestroyed } from '@angular/core/rxjs-interop';
 
+import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
+import { ListFilter, LucideAngularModule } from 'lucide-angular';
+
 @Component({
   selector: 'app-home-page',
-  imports: [HeaderComponent, LucideAngularModule, CardInvestmentsComponent],
+  imports: [
+    HeaderComponent,
+    LucideAngularModule,
+    CardInvestmentsComponent,
+    MatProgressSpinnerModule,
+  ],
   templateUrl: './home-page.component.html',
   styleUrl: './home-page.component.scss',
 })
 export class HomePageComponent implements OnInit {
   investmentList = signal<InvestmentResponse[]>([]);
+  isLoading = signal(true);
 
   readonly listFilter = ListFilter;
 
@@ -43,8 +51,8 @@ export class HomePageComponent implements OnInit {
       .pipe(takeUntilDestroyed(this._destroyRef), take(1))
       .subscribe({
         next: (response) => {
-          console.log(response);
           this.investmentList.set(response);
+          this.isLoading.set(false);
         },
         error: (error) => {
           console.error('Error fetching investments:', error);

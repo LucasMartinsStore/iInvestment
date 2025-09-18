@@ -9,7 +9,13 @@
       <lucide-icon [name]="listFilter"></lucide-icon>
     </div>
   </div>
+  @if (isLoading()) {
+  <div class="spinner-container">
+    <mat-progress-spinner class="spinner" mode="indeterminate" diameter="50" />
+  </div>
+  }@else{
   <div class="container-cards">
     <app-card-investments [investmentListItems]="investmentList()"></app-card-investments>
   </div>
+  }
 </main>

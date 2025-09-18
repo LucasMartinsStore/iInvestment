@@ -1,11 +1,13 @@
 import { Component, input, signal } from '@angular/core';
 import { InvestmentResponse } from '../../interface/investment-response';
-import { MatCardModule } from '@angular/material/card';
-import { MatChipsModule } from '@angular/material/chips';
 import { CurrencyPipe, DatePipe } from '@angular/common';
 import { ArrowRight, LucideAngularModule } from 'lucide-angular';
 import { STRING_CONSTANTS } from '../../../../shared/constants/string-contants';
 import { EmptyStateComponent } from '../empty-state/empty-state.component';
+
+import { MatCardModule } from '@angular/material/card';
+import { MatChipsModule } from '@angular/material/chips';
+import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 
 @Component({
   selector: 'app-card-investments',
