@@ -10,6 +10,7 @@ import { takeUntilDestroyed } from '@angular/core/rxjs-interop';
 
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 import { ListFilter, LucideAngularModule } from 'lucide-angular';
+import { SharedService } from '../../shared/services/shared/shared.service';
 
 @Component({
   selector: 'app-home-page',
@@ -31,6 +32,8 @@ export class HomePageComponent implements OnInit {
   private _router = inject(Router);
   private _location = inject(Location);
   private _investmentResponseService = inject(InvestmentResponseService);
+  private _sharedService = inject(SharedService);
+
   private _destroyRef = inject(DestroyRef);
 
   ngOnInit() {
@@ -44,6 +47,10 @@ export class HomePageComponent implements OnInit {
   goBack() {
     this._location.back();
   }
+  onInvestmentSelected(investment: InvestmentResponse) {
+    this._sharedService.setSelectedInvestment(investment);
+    this._router.navigate(['detail-investment']);
+  }
 
   private _getInvestments() {
     this._investmentResponseService
@@ -52,6 +59,7 @@ export class HomePageComponent implements OnInit {
       .subscribe({
         next: (response) => {
           this.investmentList.set(response);
+          this._sharedService.setInvestmentList(response);
           this.isLoading.set(false);
         },
         error: (error) => {

@@ -1,6 +1,6 @@
 @for (item of investmentListItems(); track item.id) {
 
-<mat-card class="card-container" appearance="outlined">
+<mat-card (click)="onCardClick(item)" class="card-container" appearance="outlined">
   <mat-card-header class="card-header">
     <div class="container-title-card">
       <mat-card-title>{{ item.codigoAcao ? item.codigoAcao : item.nomeEmpresa }}</mat-card-title>
@@ -29,7 +29,9 @@
     </div>
   </mat-card-content>
   <mat-card-footer class="card-footer">
-    <lucide-icon [name]="arrowRight"></lucide-icon>
+    <button>
+      <lucide-icon [name]="arrowRight"></lucide-icon>
+    </button>
   </mat-card-footer>
 </mat-card>
 }@empty {

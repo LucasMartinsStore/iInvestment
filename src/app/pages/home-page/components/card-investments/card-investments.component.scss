@@ -1,42 +1,162 @@
+// Angular Material responsive card component
 .card-container {
-  display: flex;
-  flex-direction: column;
-  margin-bottom: 16px;
   border-top: 3px solid var(--mat-sys-primary);
+  background: var(--mat-sys-surface);
+  border-radius: 4px;
+  box-shadow: var(--mat-sys-elevation-level1);
+  margin: 16px;
 
   .container-title-card {
     display: flex;
     justify-content: space-between;
+    align-items: center;
     width: 100%;
+    padding: 16px;
+    gap: 16px;
+
+    // Angular Material Handset breakpoint (< 600px)
+    @media (max-width: 599.98px) {
+      align-items: flex-start;
+      gap: 12px;
+      padding: 12px;
+    }
+
+    // Angular Material Tablet breakpoint (600px - 959px)
+    @media (min-width: 600px) and (max-width: 959.98px) {
+      padding: 14px;
+      gap: 12px;
+    }
   }
 
   .container-chips {
-    margin-left: 12px;
-    margin-top: 12px;
+    margin: 0 16px 8px 24px;
+
+    // Handset
+    @media (max-width: 599.98px) {
+      margin: 0 12px 8px 24px;
+    }
+
+    // Tablet
+    @media (min-width: 600px) and (max-width: 959.98px) {
+      margin: 0 14px 8px 24px;
+    }
   }
+
   ul {
     list-style: none;
     padding: 0;
+    margin: 0;
 
     .list-item {
       display: flex;
       justify-content: space-between;
-      padding: 12px 0;
-      border-bottom: 1px solid var(--mat-sys-on-surface-variant);
+      align-items: center;
+      padding: 16px;
+      border-bottom: 1px solid var(--mat-sys-outline-variant);
+      min-height: 48px; // Material Design minimum touch target
+
+      // Handset
+      @media (max-width: 599.98px) {
+        padding: 12px;
+        align-items: flex-start;
+        gap: 8px;
+        min-height: auto;
+
+        .item-value {
+          align-self: flex-end;
+          font-weight: 500;
+        }
+      }
+
+      // Tablet
+      @media (min-width: 600px) and (max-width: 959.98px) {
+        padding: 14px;
+      }
+
+      // Typography seguindo Material Design
+      .item-label {
+        color: var(--mat-sys-on-surface);
+        font: var(--mat-sys-body-medium);
+      }
+
+      .item-value {
+        color: var(--mat-sys-on-surface);
+        font: var(--mat-sys-body-medium);
+        font-weight: 500;
+      }
     }
+
     .list-item:last-child {
       border-bottom: none;
     }
+
+    .list-item:hover {
+      background-color: var(--mat-sys-surface-variant);
+    }
+
     .footer-label,
     .footer-value {
-      font-weight: bold;
+      font: var(--mat-sys-title-medium);
+      color: var(--mat-sys-on-surface);
+
+      // Handset
+      @media (max-width: 599.98px) {
+        font: var(--mat-sys-title-small);
+      }
     }
   }
+
   .card-footer {
     display: flex;
     justify-content: flex-end;
-    padding-right: 16px;
-    padding-bottom: 16px;
-    cursor: pointer;
+    align-items: center;
+    padding: 16px;
+    min-height: 48px; // Material Design minimum touch target
+
+    // Handset
+    @media (max-width: 599.98px) {
+      padding: 12px;
+    }
+
+    // Tablet
+    @media (min-width: 600px) and (max-width: 959.98px) {
+      padding: 14px;
+    }
+
+    // Material Design interactive states
+    &:hover {
+      background-color: var(--mat-sys-surface-variant);
+    }
+
+    &:focus-visible {
+      outline: 2px solid var(--mat-sys-primary);
+      outline-offset: 2px;
+    }
+
+    // Material Design ripple effect simulation
+    &:active {
+      background-color: var(--mat-sys-primary-container);
+    }
+  }
+
+  // Material Design elevation on hover
+  &:hover {
+    box-shadow: var(--mat-sys-elevation-level2);
+  }
+
+  // Responsive margins following Material Design guidelines
+  @media (max-width: 599.98px) {
+    margin: 8px;
+    border-radius: 12px; // Mais arredondado no mobile
+  }
+
+  @media (min-width: 600px) and (max-width: 959.98px) {
+    margin: 12px;
+    border-radius: 8px;
+  }
+
+  @media (min-width: 960px) {
+    margin: 16px;
+    border-radius: 4px;
   }
 }

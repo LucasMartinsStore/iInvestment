@@ -1,4 +1,4 @@
-import { Component, input, signal } from '@angular/core';
+import { Component, input, output, signal } from '@angular/core';
 import { InvestmentResponse } from '../../interface/investment-response';
 import { CurrencyPipe, DatePipe } from '@angular/common';
 import { ArrowRight, LucideAngularModule } from 'lucide-angular';
@@ -7,7 +7,6 @@ import { EmptyStateComponent } from '../empty-state/empty-state.component';
 
 import { MatCardModule } from '@angular/material/card';
 import { MatChipsModule } from '@angular/material/chips';
-import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 
 @Component({
   selector: 'app-card-investments',
@@ -24,8 +23,14 @@ import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 })
 export class CardInvestmentsComponent {
   investmentListItems = input.required<InvestmentResponse[]>();
+  investmentSelected = output<InvestmentResponse>();
+
   readonly arrowRight = ArrowRight;
   investmentsQuantity = STRING_CONSTANTS.INVESTMENTS_QUANTITY;
   investmentsNetValue = STRING_CONSTANTS.INVESTMENTS_NET_VALUE;
   investmentsPurchaseDate = STRING_CONSTANTS.INVESTMENTS_PURCHASE_DATE;
+
+  onCardClick(investment: InvestmentResponse) {
+    this.investmentSelected.emit(investment);
+  }
 }
