@@ -5,10 +5,18 @@ import { MatChipsModule } from '@angular/material/chips';
 import { CurrencyPipe, DatePipe } from '@angular/common';
 import { ArrowRight, LucideAngularModule } from 'lucide-angular';
 import { STRING_CONSTANTS } from '../../../../shared/constants/string-contants';
+import { EmptyStateComponent } from '../empty-state/empty-state.component';
 
 @Component({
   selector: 'app-card-investments',
-  imports: [MatCardModule, MatChipsModule, CurrencyPipe, DatePipe, LucideAngularModule],
+  imports: [
+    MatCardModule,
+    MatChipsModule,
+    CurrencyPipe,
+    DatePipe,
+    LucideAngularModule,
+    EmptyStateComponent,
+  ],
   templateUrl: './card-investments.component.html',
   styleUrl: './card-investments.component.scss',
 })
