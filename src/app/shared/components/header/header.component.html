@@ -1,0 +1,14 @@
+<mat-toolbar>
+  <nav>
+    <div class="container-button-action">
+      <button (click)="goToBack.emit()" class="button-icon" mat-button>
+        <lucide-icon [name]="arrowLeft"></lucide-icon>
+      </button>
+    </div>
+    <div class="container-button-action">
+      <button (click)="goToFaq.emit()" class="button-icon" mat-button>
+        <lucide-icon [name]="circleQuestionMark"></lucide-icon>
+      </button>
+    </div>
+  </nav>
+</mat-toolbar>

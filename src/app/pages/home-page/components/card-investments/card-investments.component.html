@@ -1,0 +1,36 @@
+@for (item of investmentListItems(); track item.id) {
+<mat-card class="card-container" appearance="outlined">
+  <mat-card-header class="card-header">
+    <div class="container-title-card">
+      <mat-card-title>{{ item.codigoAcao ? item.codigoAcao : item.nomeEmpresa }}</mat-card-title>
+      <mat-card-subtitle>{{ item.valorUnitario | currency : 'BRL' }}</mat-card-subtitle>
+    </div>
+  </mat-card-header>
+  <div class="container-chips">
+    <mat-chip>{{ item.tipo }}</mat-chip>
+  </div>
+  <mat-card-content>
+    <div class="container-content">
+      <ul>
+        <li class="list-item">
+          <span class="footer-label">{{ investmentsQuantity }}</span>
+          <span class="footer-value">{{ item.quantidade }}</span>
+        </li>
+        <li class="list-item">
+          <span class="footer-label">{{ investmentsNetValue }}</span>
+          <span class="footer-value">{{ item.valorLiquido | currency : 'BRL' }}</span>
+        </li>
+        <li class="list-item">
+          <span class="footer-label">{{ investmentsPurchaseDate }}</span>
+          <span class="footer-value">{{ item.dataCompra | date : 'dd/MM/yyyy' }}</span>
+        </li>
+      </ul>
+    </div>
+  </mat-card-content>
+  <mat-card-footer class="card-footer">
+    <lucide-icon [name]="arrowRight"></lucide-icon>
+  </mat-card-footer>
+</mat-card>
+}@empty {
+<p>Nenhum investimento encontrado.</p>
+}

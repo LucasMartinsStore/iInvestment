@@ -1,0 +1,42 @@
+.card-container {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 16px;
+  border-top: 3px solid var(--mat-sys-primary);
+
+  .container-title-card {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+  }
+
+  .container-chips {
+    margin-left: 12px;
+    margin-top: 12px;
+  }
+  ul {
+    list-style: none;
+    padding: 0;
+
+    .list-item {
+      display: flex;
+      justify-content: space-between;
+      padding: 12px 0;
+      border-bottom: 1px solid var(--mat-sys-on-surface-variant);
+    }
+    .list-item:last-child {
+      border-bottom: none;
+    }
+    .footer-label,
+    .footer-value {
+      font-weight: bold;
+    }
+  }
+  .card-footer {
+    display: flex;
+    justify-content: flex-end;
+    padding-right: 16px;
+    padding-bottom: 16px;
+    cursor: pointer;
+  }
+}

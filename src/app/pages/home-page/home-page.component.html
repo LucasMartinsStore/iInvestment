@@ -1,0 +1,15 @@
+<app-header (goToFaq)="goToFaq()" (goToBack)="goBack()" />
+
+<main>
+  <div class="container">
+    <div class="container-title">
+      <h1>Investimentos</h1>
+    </div>
+    <div class="container-filter">
+      <lucide-icon [name]="listFilter"></lucide-icon>
+    </div>
+  </div>
+  <div class="container-cards">
+    <app-card-investments [investmentListItems]="investmentList()"></app-card-investments>
+  </div>
+</main>

@@ -1,0 +1,166 @@
+{
+  "investimentos": [
+    {
+      "id": 1,
+      "codigoAcao": "",
+      "nomeEmpresa": "Petrobras PN",
+      "quantidade": 100,
+      "valorUnitario": 28.45,
+      "valorBruto": 2845.0,
+      "taxas": 5.69,
+      "valorLiquido": 2839.31,
+      "dataCompra": "2024-01-15",
+      "dataVencimento": null,
+      "tipo": "ação",
+      "setor": "Petróleo e Gás",
+      "resgate": {
+        "disponivel": true,
+        "dataMinima": "2024-01-16",
+        "taxaResgate": 0.002
+      },
+      "detalhes": {
+        "dividendos": 142.5,
+        "rentabilidadeAcumulada": 12.5,
+        "rentabilidadeAnual": 15.8,
+        "volatilidade": "Alta",
+        "rating": "B+",
+        "liquidez": "Alta"
+      }
+    },
+    {
+      "id": 2,
+      "codigoAcao": "VALE3",
+      "nomeEmpresa": "Vale ON",
+      "quantidade": 200,
+      "valorUnitario": 65.2,
+      "valorBruto": 13040.0,
+      "taxas": 26.08,
+      "valorLiquido": 13013.92,
+      "dataCompra": "2024-02-10",
+      "dataVencimento": null,
+      "tipo": "ação",
+      "setor": "Mineração",
+      "resgate": {
+        "disponivel": true,
+        "dataMinima": "2024-02-11",
+        "taxaResgate": 0.002
+      },
+      "detalhes": {
+        "dividendos": 520.0,
+        "rentabilidadeAcumulada": 8.7,
+        "rentabilidadeAnual": 11.2,
+        "volatilidade": "Média",
+        "rating": "A-",
+        "liquidez": "Alta"
+      }
+    },
+    {
+      "id": 3,
+      "codigoAcao": "ITUB4",
+      "nomeEmpresa": "Itaú Unibanco PN",
+      "quantidade": 300,
+      "valorUnitario": 32.8,
+      "valorBruto": 9840.0,
+      "taxas": 19.68,
+      "valorLiquido": 9820.32,
+      "dataCompra": "2024-03-05",
+      "dataVencimento": null,
+      "tipo": "ação",
+      "setor": "Bancos",
+      "resgate": {
+        "disponivel": true,
+        "dataMinima": "2024-03-06",
+        "taxaResgate": 0.002
+      },
+      "detalhes": {
+        "dividendos": 295.2,
+        "rentabilidadeAcumulada": 6.3,
+        "rentabilidadeAnual": 9.8,
+        "volatilidade": "Baixa",
+        "rating": "A+",
+        "liquidez": "Alta"
+      }
+    },
+    {
+      "id": 4,
+      "codigoAcao": "TESOURO-SELIC",
+      "nomeEmpresa": "Tesouro Selic 2027",
+      "quantidade": 1,
+      "valorUnitario": 15000.0,
+      "valorBruto": 15000.0,
+      "taxas": 30.0,
+      "valorLiquido": 14970.0,
+      "dataCompra": "2024-01-20",
+      "dataVencimento": "2027-01-01",
+      "tipo": "tesouro",
+      "setor": "Renda Fixa",
+      "resgate": {
+        "disponivel": true,
+        "dataMinima": "2024-01-21",
+        "taxaResgate": 0.001
+      },
+      "detalhes": {
+        "dividendos": 0,
+        "rentabilidadeAcumulada": 4.2,
+        "rentabilidadeAnual": 13.65,
+        "volatilidade": "Muito Baixa",
+        "rating": "AAA",
+        "liquidez": "Alta"
+      }
+    },
+    {
+      "id": 5,
+      "codigoAcao": "CDB-INTER",
+      "nomeEmpresa": "CDB Banco Inter 110% CDI",
+      "quantidade": 1,
+      "valorUnitario": 25000.0,
+      "valorBruto": 25000.0,
+      "taxas": 50.0,
+      "valorLiquido": 24950.0,
+      "dataCompra": "2024-02-15",
+      "dataVencimento": "2026-02-15",
+      "tipo": "cdb",
+      "setor": "Renda Fixa",
+      "resgate": {
+        "disponivel": false,
+        "dataMinima": "2026-02-15",
+        "taxaResgate": 0
+      },
+      "detalhes": {
+        "dividendos": 0,
+        "rentabilidadeAcumulada": 3.8,
+        "rentabilidadeAnual": 14.96,
+        "volatilidade": "Baixa",
+        "rating": "A",
+        "liquidez": "Baixa"
+      }
+    },
+    {
+      "id": 6,
+      "codigoAcao": "BBDC4",
+      "nomeEmpresa": "Bradesco PN",
+      "quantidade": 150,
+      "valorUnitario": 14.25,
+      "valorBruto": 2137.5,
+      "taxas": 4.28,
+      "valorLiquido": 2133.22,
+      "dataCompra": "2024-04-01",
+      "dataVencimento": null,
+      "tipo": "ação",
+      "setor": "Bancos",
+      "resgate": {
+        "disponivel": true,
+        "dataMinima": "2024-04-02",
+        "taxaResgate": 0.002
+      },
+      "detalhes": {
+        "dividendos": 85.5,
+        "rentabilidadeAcumulada": 5.1,
+        "rentabilidadeAnual": 8.9,
+        "volatilidade": "Baixa",
+        "rating": "A",
+        "liquidez": "Alta"
+      }
+    }
+  ]
+}
