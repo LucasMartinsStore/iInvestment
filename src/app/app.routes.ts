@@ -17,4 +17,9 @@ export const routes: Routes = [
       import('./pages/detail-investment-page/routes').then((m) => m.detailInvestmentRoutes),
     title: 'iInvestment - Detail Investment',
   },
+  {
+    path: 'error',
+    loadChildren: () => import('./pages/error/error-page/routes').then((m) => m.errorRoutes),
+    title: 'iInvestment - Erro',
+  },
 ];

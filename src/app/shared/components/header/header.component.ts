@@ -1,4 +1,4 @@
-import { Component, output } from '@angular/core';
+import { Component, input, output } from '@angular/core';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { ArrowLeft, CircleQuestionMark, LucideAngularModule } from 'lucide-angular';
 
@@ -12,6 +12,7 @@ export class HeaderComponent {
   readonly arrowLeft = ArrowLeft;
   readonly circleQuestionMark = CircleQuestionMark;
 
+  showFaqButton = input<boolean>(true);
   goToFaq = output();
   goToBack = output();
 }

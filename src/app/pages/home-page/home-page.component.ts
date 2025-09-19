@@ -104,8 +104,8 @@ export class HomePageComponent implements OnInit {
           this._sharedService.setInvestmentList(response);
           this.isLoading.set(false);
         },
-        error: (error) => {
-          console.error('Error fetching investments:', error);
+        error: () => {
+          this._router.navigate(['error']);
         },
       });
   }

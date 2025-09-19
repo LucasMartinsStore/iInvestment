@@ -1,0 +1,8 @@
+<div class="container-error">
+  <img src="/image/alert-error.svg" aria-hidden="true" class="error-icon" />
+  <h1>{{ errorPageMessage }}</h1>
+  <p>{{ errorPageSubmessage }}</p>
+  <footer class="container-footer">
+    <button matButton="filled" (click)="goBack()" class="btn-back">{{ errorPageButton }}</button>
+  </footer>
+</div>

@@ -10,4 +10,8 @@ export const STRING_CONSTANTS = {
 
   BOTTOM_SHEET_TITLE: 'Ordenar por: ',
   BOTTOM_SHEET_BUTTON: 'Ordenar',
+
+  ERROR_PAGE_MESSAGE: 'Ocorreu um erro!',
+  ERROR_PAGE_SUBMESSAGE: 'Desculpe, algo deu errado ao carregar a página.',
+  ERROR_PAGE_BUTTON: 'Voltar',
 };
