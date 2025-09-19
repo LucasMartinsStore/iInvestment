@@ -33,4 +33,10 @@ main {
       font-size: 12px;
     }
   }
+  .spinner-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 60vh;
+  }
 }
