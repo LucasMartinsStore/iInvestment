@@ -26,6 +26,15 @@
       padding: 14px;
       gap: 12px;
     }
+    .title-content {
+      font: var(--mat-sys-title-medium);
+      color: var(--mat-sys-on-surface);
+      font-family: 'Nunito', sans-serif;
+      // Handset
+      @media (max-width: 599.98px) {
+        font: var(--mat-sys-title-small);
+      }
+    }
   }
 
   .container-chips {
@@ -46,7 +55,6 @@
     list-style: none;
     padding: 0;
     margin: 0;
-
     .list-item {
       display: flex;
       justify-content: space-between;
@@ -96,7 +104,8 @@
 
     .footer-label,
     .footer-value {
-      font: var(--mat-sys-title-medium);
+      font-size: var(--mat-sys-body-medium);
+      gap: 16px;
       color: var(--mat-sys-on-surface);
 
       // Handset
