@@ -5,7 +5,7 @@ import { Router } from '@angular/router';
 import { InvestmentResponseService } from './service/investment-response/investment-response.service';
 import { InvestmentResponse } from './interface/investment-response';
 import { CardInvestmentsComponent } from './components/card-investments/card-investments.component';
-import { take } from 'rxjs';
+import { take, pipe } from 'rxjs';
 import { takeUntilDestroyed } from '@angular/core/rxjs-interop';
 
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
@@ -13,6 +13,7 @@ import { MatBottomSheet, MatBottomSheetModule } from '@angular/material/bottom-s
 import { ListFilter, LucideAngularModule } from 'lucide-angular';
 import { SharedService } from '../../shared/services/shared/shared.service';
 import { BottomSheetComponent } from './components/bottom-sheet/bottom-sheet.component';
+import { OrderType } from './interface/types/order-type';
 
 @Component({
   selector: 'app-home-page',
@@ -29,6 +30,7 @@ import { BottomSheetComponent } from './components/bottom-sheet/bottom-sheet.com
 export class HomePageComponent implements OnInit {
   investmentList = signal<InvestmentResponse[]>([]);
   isLoading = signal(true);
+  orderType!: OrderType;
 
   readonly listFilter = ListFilter;
 
@@ -44,9 +46,16 @@ export class HomePageComponent implements OnInit {
   }
 
   openBottomSheet() {
-    this._bottomSheet.open(BottomSheetComponent);
-  }
+    const bottomSheetRef = this._bottomSheet.open(BottomSheetComponent);
 
+    const subscription = bottomSheetRef.instance.orderByEvent.subscribe((orderType: string) => {
+      this._sortInvestments(orderType as OrderType);
+    });
+
+    bottomSheetRef.afterDismissed().subscribe(() => {
+      subscription.unsubscribe();
+    });
+  }
   goToFaq() {
     this._router.navigate(['faq']);
   }
@@ -57,6 +66,32 @@ export class HomePageComponent implements OnInit {
   onInvestmentSelected(investment: InvestmentResponse) {
     this._sharedService.setSelectedInvestment(investment);
     this._router.navigate(['detail-investment']);
+  }
+
+  private _sortInvestments(orderType: OrderType) {
+    const currentList = this.investmentList();
+
+    if (!orderType || currentList.length === 0) {
+      return;
+    }
+
+    let sortedList: InvestmentResponse[] = [];
+
+    if (orderType === 'Ordernar Crescente') {
+      sortedList = [...currentList].sort((a, b) => {
+        const dateA = new Date(a.dataCompra || 0);
+        const dateB = new Date(b.dataCompra || 0);
+        return dateA.getTime() - dateB.getTime();
+      });
+    } else if (orderType === 'Ordernar Decrescente') {
+      sortedList = [...currentList].sort((a, b) => {
+        const dateA = new Date(a.dataCompra || 0);
+        const dateB = new Date(b.dataCompra || 0);
+        return dateB.getTime() - dateA.getTime();
+      });
+    }
+
+    this.investmentList.set(sortedList);
   }
 
   private _getInvestments() {
