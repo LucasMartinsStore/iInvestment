@@ -1,5 +1,10 @@
 <mat-nav-list>
-  <label id="example-radio-group-label">{{ bottomSheetTitle }}</label>
+  <div class="container-title">
+    <label id="example-radio-group-label">{{ bottomSheetTitle }}</label>
+    <button class="btn-close" (click)="closeSheet()" aria-label="fechar">
+      <lucide-icon [name]="close"></lucide-icon>
+    </button>
+  </div>
   <mat-radio-group
     aria-labelledby="example-radio-group-label"
     class="example-radio-group"

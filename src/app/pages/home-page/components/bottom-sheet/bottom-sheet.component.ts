@@ -5,16 +5,18 @@ import { FormsModule } from '@angular/forms';
 import { MatRadioModule } from '@angular/material/radio';
 import { STRING_CONSTANTS } from '../../../../shared/constants/string-contants';
 import { MatButtonModule } from '@angular/material/button';
+import { LucideAngularModule, X } from 'lucide-angular';
 
 @Component({
   selector: 'app-bottom-sheet',
-  imports: [MatListModule, MatRadioModule, FormsModule, MatButtonModule],
+  imports: [MatListModule, MatRadioModule, FormsModule, MatButtonModule, LucideAngularModule],
   templateUrl: './bottom-sheet.component.html',
   styleUrl: './bottom-sheet.component.scss',
 })
 export class BottomSheetComponent {
   order!: string;
   orderBy: string[] = ['Ordernar Crescente', 'Ordernar Decrescente'];
+  close = X;
 
   orderByEvent = output<string>();
 
@@ -25,6 +27,9 @@ export class BottomSheetComponent {
 
   applyOrder() {
     this.orderByEvent.emit(this.order);
+    this._bottomSheetRef.dismiss();
+  }
+  closeSheet() {
     this._bottomSheetRef.dismiss();
   }
 }
