@@ -7,4 +7,7 @@ export const STRING_CONSTANTS = {
   INVESTMENTS_QUANTITY: 'Quantidade:',
   INVESTMENTS_NET_VALUE: 'Valor Líquido:',
   INVESTMENTS_PURCHASE_DATE: 'Data da Compra:',
+
+  BOTTOM_SHEET_TITLE: 'Ordenar por: ',
+  BOTTOM_SHEET_BUTTON: 'Ordenar',
 };

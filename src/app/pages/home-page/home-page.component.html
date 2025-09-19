@@ -6,7 +6,9 @@
       <h1>Investimentos</h1>
     </div>
     <div class="container-filter">
-      <lucide-icon [name]="listFilter"></lucide-icon>
+      <button (click)="openBottomSheet()" class="btn-filter">
+        <lucide-icon [name]="listFilter"></lucide-icon>
+      </button>
     </div>
   </div>
   @if (isLoading()) {

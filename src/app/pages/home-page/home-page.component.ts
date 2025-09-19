@@ -9,8 +9,10 @@ import { take } from 'rxjs';
 import { takeUntilDestroyed } from '@angular/core/rxjs-interop';
 
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
+import { MatBottomSheet, MatBottomSheetModule } from '@angular/material/bottom-sheet';
 import { ListFilter, LucideAngularModule } from 'lucide-angular';
 import { SharedService } from '../../shared/services/shared/shared.service';
+import { BottomSheetComponent } from './components/bottom-sheet/bottom-sheet.component';
 
 @Component({
   selector: 'app-home-page',
@@ -19,6 +21,7 @@ import { SharedService } from '../../shared/services/shared/shared.service';
     LucideAngularModule,
     CardInvestmentsComponent,
     MatProgressSpinnerModule,
+    MatBottomSheetModule,
   ],
   templateUrl: './home-page.component.html',
   styleUrl: './home-page.component.scss',
@@ -33,11 +36,15 @@ export class HomePageComponent implements OnInit {
   private _location = inject(Location);
   private _investmentResponseService = inject(InvestmentResponseService);
   private _sharedService = inject(SharedService);
-
   private _destroyRef = inject(DestroyRef);
+  private _bottomSheet = inject(MatBottomSheet);
 
   ngOnInit() {
     this._getInvestments();
+  }
+
+  openBottomSheet() {
+    this._bottomSheet.open(BottomSheetComponent);
   }
 
   goToFaq() {

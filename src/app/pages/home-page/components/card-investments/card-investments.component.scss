@@ -107,12 +107,18 @@
   }
 
   .card-footer {
+    cursor: pointer;
     display: flex;
     justify-content: flex-end;
     align-items: center;
     padding: 16px;
     min-height: 48px; // Material Design minimum touch target
 
+    .btn-see-more {
+      background-color: transparent;
+      border: none;
+      cursor: pointer;
+    }
     // Handset
     @media (max-width: 599.98px) {
       padding: 12px;
