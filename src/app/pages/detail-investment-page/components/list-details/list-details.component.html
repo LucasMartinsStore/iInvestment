@@ -35,6 +35,6 @@
 
 @if (listDetailsData()?.resgate?.disponivel) {
 <footer class="footer">
-  <button matButton="filled">{{ detailsPageButton }}</button>
+  <button (click)="goToSuccess()" matButton="filled">{{ detailsPageButton }}</button>
 </footer>
 }
