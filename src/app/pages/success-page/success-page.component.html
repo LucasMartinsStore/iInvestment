@@ -1,0 +1,21 @@
+<div class="payment-status">
+  @if (isLoading()) {
+  <div class="loading-container">
+    <mat-spinner></mat-spinner>
+    <p>Verificando pagamento...</p>
+    <div class="container">
+      <div class="container-content-success">
+        <div class="icon-lock">
+          <lucide-icon [name]="lockIcon"></lucide-icon>
+        </div>
+        <span> feito com segurança iInvestment </span>
+      </div>
+    </div>
+  </div>
+  } @else if (isSuccess()) {
+  <div class="success-container">
+    <h2>Pagamento realizado com sucesso!</h2>
+    <p>Sua transação foi processada.</p>
+  </div>
+  }
+</div>

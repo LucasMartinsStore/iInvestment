@@ -1,0 +1,47 @@
+.payment-status {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  padding: 20px;
+  background-color: var(--mat-sys-primary);
+  color: #fff;
+}
+
+.loading-container,
+.success-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 16px;
+
+  p {
+    margin: 0;
+    font-size: 16px;
+  }
+
+  h2 {
+    margin: 0;
+    font-size: 24px;
+  }
+}
+
+.loading-container {
+  mat-progress-spinner {
+    margin-bottom: 16px;
+  }
+  p {
+    margin-top: 16px;
+  }
+}
+
+.container-content-success {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+span {
+  font-weight: bold;
+}
