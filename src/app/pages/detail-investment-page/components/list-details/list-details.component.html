@@ -1,0 +1,40 @@
+<div class="container">
+  <div class="container-list">
+    <ul>
+      <li>
+        <span class="label">{{ detailsPageRating }}</span>
+        <span>{{ listDetailsData()?.detalhes?.rating }}</span>
+      </li>
+      <li>
+        <span class="label">{{ detailsPageLiquidity }}</span>
+        <span>{{ listDetailsData()?.detalhes?.liquidez }}</span>
+      </li>
+      <li>
+        <span class="label">{{ detailsPageAccumulatedYield }}:</span>
+        <span>{{ listDetailsData()?.detalhes?.rentabilidadeAcumulada }} %</span>
+      </li>
+      <li>
+        <span class="label">{{ detailsPageAnnualYield }}</span>
+        <span>{{ listDetailsData()?.detalhes?.rentabilidadeAnual }} %</span>
+      </li>
+      <li>
+        <span class="label">{{ detailsPageVolatility }}</span>
+        <span>{{ listDetailsData()?.detalhes?.volatilidade }} </span>
+      </li>
+      <li>
+        <span class="label">{{ detailsPageRedemptionAvailable }}</span>
+        <span>{{ listDetailsData()?.resgate?.disponivel ? 'Sim' : 'Não' }}</span>
+      </li>
+      <li>
+        <span class="label">{{ detailsPageMinimumRedemptionDate }}</span>
+        <span>{{ listDetailsData()?.resgate?.dataMinima | date : 'dd/MM/yyyy' }}</span>
+      </li>
+    </ul>
+  </div>
+</div>
+
+@if (listDetailsData()?.resgate?.disponivel) {
+<footer class="footer">
+  <button matButton="filled">{{ detailsPageButton }}</button>
+</footer>
+}
