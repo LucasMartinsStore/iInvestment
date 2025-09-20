@@ -12,6 +12,16 @@ export const STRING_CONSTANTS = {
   BOTTOM_SHEET_BUTTON: 'Ordenar',
 
   ERROR_PAGE_MESSAGE: 'Ocorreu um erro!',
-  ERROR_PAGE_SUBMESSAGE: 'Desculpe, algo deu errado ao carregar a página.',
+  ERROR_PAGE_SUBMESSAGE: 'Desculpe, algo deu errado ao carregar as informações.',
   ERROR_PAGE_BUTTON: 'Voltar',
+
+  DETAIL_PAGE_TITLE: 'Detalhes investimento',
+  DETAIL_PAGE_RATING: 'Rating:',
+  DETAIL_PAGE_LIQUIDITY: 'Liquidez:',
+  DETAIL_PAGE_ACCUMULATED_YIELD: 'Rentabilidade acumulada:',
+  DETAIL_PAGE_ANNUAL_YIELD: 'Rentabilidade anual:',
+  DETAIL_PAGE_VOLATILITY: 'Volatilidade:',
+  DETAIL_PAGE_REDEMPTION_AVAILABLE: 'Disponível para resgate:',
+  DETAIL_PAGE_MINIMUM_REDEMPTION_DATE: 'Data mínima de resgate:',
+  DETAIL_PAGE_BUTTON: 'Resgatar Valor',
 };
