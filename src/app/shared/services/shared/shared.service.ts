@@ -15,7 +15,14 @@ export class SharedService {
   setSelectedInvestment(investment: InvestmentResponse) {
     this._selectedInvestment.next(investment);
   }
+  getSelectedInvestment() {
+    return this._selectedInvestment.asObservable();
+  }
+
   setInvestmentList(investments: InvestmentResponse[]) {
     this._investmentList.next(investments);
+  }
+  getInvestmentList() {
+    return this._investmentList.asObservable();
   }
 }
