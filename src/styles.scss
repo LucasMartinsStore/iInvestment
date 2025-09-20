@@ -5,6 +5,7 @@
 // custom components at https://material.angular.dev/guide/theming
 @use '@angular/material' as mat;
 @use 'styles/overrides/toolbar.scss';
+@use 'styles/overrides/spinner-progress.scss';
 
 html {
   @include mat.theme(
