@@ -1,1 +1,10 @@
 <app-header (goToBack)="goBack()" [showFaqButton]="false" />
+
+<div class="container">
+  <div class="container-title">
+    <h1 class="title">{{ detailPageTitle }}</h1>
+    <h2 class="subtitle">{{ listDetailsData()?.codigoAcao || listDetailsData()?.nomeEmpresa }}</h2>
+  </div>
+
+  <app-list-details [listDetailsData]="listDetailsData()" />
+</div>

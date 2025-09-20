@@ -5,15 +5,18 @@ import { Router } from '@angular/router';
 import { takeUntilDestroyed } from '@angular/core/rxjs-interop';
 import { HeaderComponent } from '../../shared/components/header/header.component';
 import { take } from 'rxjs';
+import { STRING_CONSTANTS } from '../../shared/constants/string-contants';
+import { ListDetailsComponent } from './components/list-details/list-details.component';
 
 @Component({
   selector: 'app-detail-investment-page',
-  imports: [HeaderComponent],
+  imports: [HeaderComponent, ListDetailsComponent],
   templateUrl: './detail-investment-page.component.html',
   styleUrl: './detail-investment-page.component.scss',
 })
 export class DetailInvestmentPageComponent implements OnInit {
-  selectedInvestment = signal<InvestmentResponse | null>(null);
+  listDetailsData = signal<InvestmentResponse | null>(null);
+  detailPageTitle = STRING_CONSTANTS.DETAIL_PAGE_TITLE;
 
   private _sharedService = inject(SharedService);
   private _destroyRef = inject(DestroyRef);
@@ -29,10 +32,10 @@ export class DetailInvestmentPageComponent implements OnInit {
       .subscribe({
         next: (investment) => {
           console.log(investment);
-          this.selectedInvestment.set(investment);
+          this.listDetailsData.set(investment);
         },
         error: () => {
-          this._router.navigate(['/']);
+          this._router.navigate(['error']);
         },
       });
   }
