@@ -1,1 +1,36 @@
-<p>faq-page works!</p>
+<app-header (goToBack)="goBack()" [showFaqButton]="false" />
+
+<div class="container-faq">
+  <div class="container-title">
+    <h1>{{ faqPageTitle }}</h1>
+  </div>
+  <mat-accordion class="example-headers-align" multi>
+    <mat-expansion-panel>
+      <mat-expansion-panel-header>
+        <mat-panel-title> {{ faqPageAccordion1Title }} </mat-panel-title>
+      </mat-expansion-panel-header>
+
+      <p>
+        {{ faqPageAccordion1Content }}
+      </p>
+    </mat-expansion-panel>
+    <mat-expansion-panel>
+      <mat-expansion-panel-header>
+        <mat-panel-title> {{ faqPageAccordion2Title }} </mat-panel-title>
+      </mat-expansion-panel-header>
+
+      <p>
+        {{ faqPageAccordion2Content }}
+      </p>
+    </mat-expansion-panel>
+
+    <mat-expansion-panel>
+      <mat-expansion-panel-header>
+        <mat-panel-title> {{ faqPageAccordion3Title }} </mat-panel-title>
+      </mat-expansion-panel-header>
+      <p>
+        {{ faqPageAccordion3Content }}
+      </p>
+    </mat-expansion-panel>
+  </mat-accordion>
+</div>

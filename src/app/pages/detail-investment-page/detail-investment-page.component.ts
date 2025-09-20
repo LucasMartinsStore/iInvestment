@@ -31,7 +31,6 @@ export class DetailInvestmentPageComponent implements OnInit {
       .pipe(takeUntilDestroyed(this._destroyRef), take(1))
       .subscribe({
         next: (investment) => {
-          console.log(investment);
           this.listDetailsData.set(investment);
         },
         error: () => {

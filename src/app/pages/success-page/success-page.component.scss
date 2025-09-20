@@ -45,3 +45,29 @@
 span {
   font-weight: bold;
 }
+
+.success-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 16px;
+
+  p {
+    margin: 0;
+    font-size: 16px;
+  }
+
+  h2 {
+    margin: 0;
+    font-size: 24px;
+  }
+}
+.icon-check {
+  padding: 16px;
+  border-radius: 50%;
+  background-color: #059669;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

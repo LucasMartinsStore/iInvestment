@@ -1,13 +1,18 @@
 <mat-toolbar>
   <nav>
     <div class="container-button-action">
-      <button (click)="goToBack.emit()" class="button-icon" mat-button>
+      <button aria-label="voltar" (click)="goToBack.emit()" class="button-icon" mat-button>
         <lucide-icon [name]="arrowLeft"></lucide-icon>
       </button>
     </div>
     @if (showFaqButton()) {
     <div class="container-button-action">
-      <button (click)="goToFaq.emit()" class="button-icon" mat-button>
+      <button
+        aria-label="saiba mais sobre investimentos"
+        (click)="goToFaq.emit()"
+        class="button-icon"
+        mat-button
+      >
         <lucide-icon [name]="circleQuestionMark"></lucide-icon>
       </button>
     </div>
