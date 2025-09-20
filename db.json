@@ -14,8 +14,8 @@
       "tipo": "ação",
       "setor": "Petróleo e Gás",
       "resgate": {
-        "disponivel": true,
-        "dataMinima": "2024-01-16",
+        "disponivel": false,
+        "dataMinima": "2025-01-16",
         "taxaResgate": 0.002
       },
       "detalhes": {
